@@ -1,0 +1,10 @@
+*
+!.gitignore
+!.gitignore_global
+!.gitconfig
+!.bash_profile
+
+!.vimrc.local
+
+!.zshrc
+!.zprofile

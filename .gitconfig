@@ -1,0 +1,62 @@
+[user]
+	name = Ryan Schumacher
+	email = j.r.schumacher@gmail.com
+[gui]
+	recentrepo = /Users/Ryan/Projects
+
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+ [core]
+ 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	quotepath = false
+    excludesfile = /Users/ryan/.gitignore_global
+    editor = /usr/local/bin/vim
+
+ [alias]
+ 	st = status
+ 	ci = commit
+ 	br = branch
+ 	co = checkout
+ 	df = diff
+ 	lg = log -p
+ 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+ 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+ 	ls = ls-files
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[push]
+#	default = simple
+[push]
+	default = simple
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope
